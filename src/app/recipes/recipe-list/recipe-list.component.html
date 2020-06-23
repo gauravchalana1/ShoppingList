@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <a href="#" class="list-group-item clearfix" 
+        *ngFor = "let recipe of recipes"> 
+        <!--*ngFor = "let recipe of recipes" ngFor is used a for loop. let is for the limited scope within the loop; recipe is the name that we are giving and we will be using it and recipes is the name that we have taken from the .ts file-->
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ recipe.name}}</h4> <!--String interpolation-->
+                <p class="list-group-item-text">{{ recipe.description }}</p> <!--String interpolation-->
+            </div>
+            <span class="pull-right">
+                <img src= "{{ recipe.imagePath }}"
+                alt= "{{ recipe.name }}"
+                class="img-responsive" 
+                style="max-height: 50px;"> <!--String interpolation / Property binding: [src] = "recipe.imagePath"-->
+            </span>
+        </a>
+        <app-recipe-item></app-recipe-item>
+    </div>
+</div>
